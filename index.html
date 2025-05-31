@@ -110,7 +110,36 @@
           Tu navegador no soporta la etiqueta de video.
         </video>
         <button class="toggle-btn" onclick="toggleCodigo(this)">Ver más</button>
-        <div class="codigo">[...]</div>
+        <div class="codigo">
+          // Código de ejemplo para sensor de proximidad con buzzer
+          const int trigPin = 9;
+          const int echoPin = 10;
+          const int buzzer = 8;
+
+          void setup() {
+            pinMode(trigPin, OUTPUT);
+            pinMode(echoPin, INPUT);
+            pinMode(buzzer, OUTPUT);
+            Serial.begin(9600);
+          }
+
+          void loop() {
+            long duration, distance;
+            digitalWrite(trigPin, LOW);
+            delayMicroseconds(2);
+            digitalWrite(trigPin, HIGH);
+            delayMicroseconds(10);
+            digitalWrite(trigPin, LOW);
+            duration = pulseIn(echoPin, HIGH);
+            distance = duration * 0.034 / 2;
+            if (distance < 10) {
+              digitalWrite(buzzer, HIGH);
+            } else {
+              digitalWrite(buzzer, LOW);
+            }
+            delay(100);
+          }
+        </div>
       </article>
 
       <article class="proyecto">
