@@ -4,8 +4,30 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portafolio de Dante Fernández</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #f9f9f9;
+      color: #222;
+    }
+    header, footer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+    nav a:hover {
+      color: #444;
+    }
+    h2 {
+      border-bottom: 2px solid #555;
+      padding-bottom: 5px;
+    }
     .toggle-btn {
       background-color: #000;
       color: #fff;
@@ -17,21 +39,19 @@
       font-size: 0.95rem;
       transition: background-color 0.3s ease;
     }
-
     .toggle-btn:hover {
       background-color: #222;
     }
-
     .logos {
       margin-top: 10px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
-
     .logos img {
       height: 32px;
-      margin-right: 10px;
       vertical-align: middle;
     }
-
     .codigo {
       display: none;
       background-color: #3E3364;
@@ -41,6 +61,35 @@
       white-space: pre-wrap;
       font-family: monospace;
       color: #FFF;
+    }
+    .listado-logos {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 10px;
+    }
+    .listado-logos li {
+      margin: 6px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+    }
+    .listado-logos img {
+      height: 24px;
+      width: 24px;
+    }
+    .tecnologias {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 8px;
+      margin-bottom: 12px;
+    }
+    .tecnologias img {
+      height: 24px;
+      width: 24px;
+      vertical-align: middle;
     }
   </style>
   <script>
@@ -58,6 +107,7 @@
     <nav>
       <a href="#proyectos">Proyectos</a>
       <a href="#sobre-mi">Sobre mí</a>
+      <a href="#experiencia">Mi experiencia</a>
       <a href="#contacto">Contacto</a>
     </nav>
   </header>
@@ -68,17 +118,10 @@
 
       <article class="proyecto">
         <h3>Proyecto Arduino - Sensor de Proximidad</h3>
-        <p><strong>Tecnologías utilizadas:</strong> Arduino IDE, C++ (Arduino), Tinkercad</p>
-        <p><strong>Componentes:</strong> Buzzer, LEDs, Sensor HC-SR04</p>
-
-        <video controls width="640" height="360" style="max-width: 100%; border-radius: 8px;" poster="images/proyecto-arduino-thumb.jpg" >
-          <source src="video.mp4" type="video/mp4" />
-          Tu navegador no soporta la etiqueta de video.
-        </video>
-
-        <div class="logos">
+        <p><strong>Tecnologías utilizadas:</strong></p>
+        <div class="tecnologias">
           <img src="logos/arduino.logo.png" alt="Arduino" title="Arduino" />
-          <img src="logos/csharp.png" alt="C#" title="C#" />
+          <img src="logos/csherp.png" alt="C#" title="C#" />
           <img src="logos/c++.png" alt="C++" title="C++" />
           <img src="logos/github.jpg" alt="GitHub" title="GitHub" />
           <img src="logos/python.png" alt="Python" title="Python" />
@@ -87,6 +130,11 @@
           <img src="logos/unity.png" alt="Unity" title="Unity" />
           <img src="logos/vscode.jpg" alt="VSCode" title="Visual Studio Code" />
         </div>
+
+        <video controls width="640" height="360" style="max-width: 100%; border-radius: 8px;" poster="images/proyecto-arduino-thumb.jpg" >
+          <source src="video.mp4" type="video/mp4" />
+          Tu navegador no soporta la etiqueta de video.
+        </video>
 
         <button class="toggle-btn" onclick="toggleCodigo(this)">Ver más</button>
         <div class="codigo">
@@ -170,20 +218,30 @@ void loop() {
       <p>Email: <a href="mailto:dantefernandez998@gmail.com">dantefernandez998@gmail.com</a></p>
 
       <h3>Lenguajes de programación que manejo:</h3>
-      <ul>
-        <li>C#</li>
-        <li>Python</li>
-        <li>C++ (Arduino)</li>
+      <ul class="listado-logos">
+        <li><img src="logos/csherp.png" alt="C#" title="C#" /> C#</li>
+        <li><img src="logos/python.png" alt="Python" title="Python" /> Python</li>
+        <li><img src="logos/c++.png" alt="C++" title="C++" /> C++ (Arduino)</li>
       </ul>
 
-      <h3>Tools:</h3>
-      <ul>
-        <li>Unity</li>
-        <li>Arduino IDE</li>
-        <li>Visual Studio</li>
-        <li>Tinkercad</li>
-        <li>Scratch</li>
+      <h3>Herramientas y tecnologías que utilizo:</h3>
+      <ul class="listado-logos">
+        <li><img src="logos/unity.png" alt="Unity" title="Unity" /> Unity</li>
+        <li><img src="logos/arduino.logo.png" alt="Arduino" title="Arduino" /> Arduino IDE</li>
+        <li><img src="logos/vscode.jpg" alt="Visual Studio Code" title="VSCode" /> Visual Studio Code</li>
+        <li><img src="logos/tinkercad.png" alt="Tinkercad" title="Tinkercad" /> Tinkercad</li>
+        <li><img src="logos/scratch.jpg" alt="Scratch" title="Scratch" /> Scratch</li>
       </ul>
+    </section>
+
+    <section id="experiencia">
+      <h2>Mi experiencia y aprendizaje</h2>
+      <p>
+        Mi experiencia en programación y electrónica comenzó con proyectos escolares y tutoriales online. He realizado cursos en plataformas como Udemy y Soy Dalto, y participo en proyectos prácticos con Arduino y desarrollo de videojuegos en Unity. También he creado proyectos personales para practicar y aprender, como brazos robóticos y juegos simples.
+      </p>
+      <p>
+        Me encanta aprender mediante la experimentación práctica y seguir mejorando mis habilidades cada día.
+      </p>
     </section>
 
     <section id="contacto">
