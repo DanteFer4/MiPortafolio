@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portafolio de Dante</title>
+  <title>Portafolio de Dante Fernández</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>Dante - Programador y Hobbyista</h1>
+    <h1>Dante Fernández - Programador</h1>
     <nav>
       <a href="#proyectos">Proyectos</a>
       <a href="#sobre-mi">Sobre mí</a>
@@ -18,41 +18,57 @@
 
   <main>
     <section id="proyectos">
-      <h2>Proyectos Destacados</h2>
-      <div class="galeria">
-        <div class="proyecto">
-          <img src="images/arduino.jpg" alt="Proyecto Arduino" />
-          <p>Proyecto con Arduino IDE</p>
-        </div>
-        <div class="proyecto">
-          <img src="images/unity.jpg" alt="Proyecto Unity" />
-          <p>Juego desarrollado en Unity</p>
-        </div>
-        <div class="proyecto">
-          <img src="images/python.jpg" alt="Proyecto Python" />
-          <p>Scripts en Python para automatización</p>
-        </div>
-      </div>
+      <h2>Mis Proyectos</h2>
+
+      <!-- Proyecto Arduino ejemplo -->
+      <article class="proyecto">
+        <h3>Proyecto Arduino - Sensor de Proximidad</h3>
+        <p><strong>Tecnologías utilizadas:</strong> Arduino IDE, Sensor HC-SR04, C++</p>
+        <video controls width="480" poster="images/proyecto-arduino-thumb.jpg">
+          <source src="videos/proyecto-arduino.mp4" type="video/mp4" />
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+        <p>Descripción: Este proyecto utiliza un sensor de proximidad para medir distancias y activar un zumbador cuando un objeto está cerca.</p>
+        <p><a href="codigo/proyecto-arduino.ino" target="_blank" rel="noopener noreferrer">Ver código fuente</a></p>
+      </article>
+
+      <!-- Podés duplicar este bloque y cambiar los datos para otros proyectos -->
     </section>
 
     <section id="sobre-mi">
       <h2>Sobre mí</h2>
-      <p>Soy Dante, tengo 14 años y me apasiona la programación, la electrónica y el desarrollo de juegos. Estoy aprendiendo y mejorando día a día.</p>
+      <p>
+        Soy Dante Fernández, tengo 16 años y programo desde los 12. Me apasiona la programación, la electrónica, el desarrollo de videojuegos y la robótica. Comencé aprendiendo Scratch y luego avancé con Arduino, siempre buscando mejorar y aprender nuevas tecnologías.
+      </p>
+      <p>Email: <a href="mailto:dantefernandez998@gmail.com">dantefernandez998@gmail.com</a></p>
+
+      <h3>Lenguajes de programación que manejo:</h3>
+      <ul>
+        <li>C#</li>
+        <li>Python</li>
+        <li>JavaScript</li>
+      </ul>
+
+      <h3>Tools:</h3>
+      <ul>
+        <li>Unity</li>
+        <li>Arduino IDE</li>
+        <li>Visual Studio</li>
+      </ul>
     </section>
 
     <section id="contacto">
       <h2>Contacto</h2>
       <p>Podés encontrarme en:</p>
       <ul>
-        <li><a href="https://github.com/dantefer4" target="_blank">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/dantefer4" target="_blank">LinkedIn</a></li>
-        <li>Email: dante@example.com</li>
+        <li><a href="https://github.com/dantefer4" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li>Email: <a href="mailto:dantefernandez998@gmail.com">dantefernandez998@gmail.com</a></li>
       </ul>
     </section>
   </main>
 
   <footer>
-    <p>© 2025 Dante. Todos los derechos reservados.</p>
+    <p>© 2025 Dante Fernández. Todos los derechos reservados.</p>
   </footer>
 </body>
 </html>
