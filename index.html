@@ -8,8 +8,8 @@
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
-      background: #3E3364;
-      color: #f0f0f0;
+      background: #eaeaea;
+      color: #222;
     }
     header, footer {
       text-align: center;
@@ -18,19 +18,19 @@
     nav a {
       margin: 0 10px;
       text-decoration: none;
-      color: #fff;
+      color: #000;
       font-weight: bold;
     }
     nav a:hover {
-      color: #ccc;
+      color: #444;
     }
     h2 {
-      border-bottom: 2px solid #aaa;
+      border-bottom: 2px solid #555;
       padding-bottom: 5px;
     }
     .toggle-btn {
-      background-color: #fff;
-      color: #000;
+      background-color: #000;
+      color: #fff;
       border: none;
       border-radius: 6px;
       padding: 8px 16px;
@@ -40,7 +40,7 @@
       transition: background-color 0.3s ease;
     }
     .toggle-btn:hover {
-      background-color: #ddd;
+      background-color: #222;
     }
     .logos {
       margin-top: 10px;
@@ -54,7 +54,7 @@
     }
     .codigo {
       display: none;
-      background-color: #1e1e1e;
+      background-color: #3E3364;
       padding: 15px;
       margin-top: 10px;
       border-radius: 6px;
@@ -112,7 +112,8 @@
         </video>
 
         <button class="toggle-btn" onclick="toggleCodigo(this)">Ver más</button>
-        <div class="codigo">// C++ code
+        <div class="codigo">
+// C++ code
 
 int sensor = 0;
 
@@ -179,13 +180,8 @@ void loop() {
     digitalWrite(8, LOW);
     digitalWrite(11, HIGH);
   }
-}</div>
-      </article>
-
-      <article class="proyecto">
-        <h3>Proyecto Arduino - Camión que no se choca</h3>
-        <p><strong>Tecnologías utilizadas:</strong> Tinkercad, C++, Arduino IDE</p>
-        <p><strong>Componentes utilizados:</strong> buzzer, sensor de proximidad, leds, motores de aficionado, Arduino Uno</p>
+}
+        </div>
       </article>
     </section>
 
@@ -209,4 +205,33 @@ void loop() {
         <li><img src="logos/arduino.logo.png" alt="Arduino" title="Arduino" /> Arduino IDE</li>
         <li><img src="logos/vscode.jpg" alt="Visual Studio Code" title="VSCode" /> Visual Studio Code</li>
         <li><img src="logos/tinkercad.png" alt="Tinkercad" title="Tinkercad" /> Tinkercad</li>
-        <li><img src="logos/scratch
+        <li><img src="logos/scratch.jpg" alt="Scratch" title="Scratch" /> Scratch</li>
+      </ul>
+    </section>
+
+    <section id="experiencia">
+      <h2>Mi experiencia y aprendizaje</h2>
+      <p>
+        Aprendí C# a través del curso de programación en Unity de Devalen en Udemy. Python lo aprendí gracias al curso completo de 8 horas de Lucas Dalto (Soy Dalto). Por último, aprendí C++ mediante un curso sobre robótica, el cual me permitió realizar proyectos con Arduino.
+      </p>
+      <p>
+        <em>Aquí se mostrará la imagen del certificado del curso de robótica:</em><br>
+        <img src="images/certificado-robotica.jpg" alt="Certificado de curso de robótica" style="max-width: 100%; margin-top: 10px; border-radius: 8px;" />
+      </p>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Podés encontrarme en:</p>
+      <ul>
+        <li><a href="https://github.com/dantefer4" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li>Email: <a href="mailto:dantefernandez998@gmail.com">dantefernandez998@gmail.com</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Dante Fernández. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
