@@ -2,89 +2,48 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portafolio de Dante Fernández</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio de Dante</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .toggle-btn {
-      background-color: #000;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      padding: 8px 16px;
-      cursor: pointer;
-      margin-top: 10px;
-      font-size: 0.95rem;
-      transition: background-color 0.3s ease;
-    }
-
-    .toggle-btn:hover {
-      background-color: #222;
-    }
-
-    .logos {
-      margin-top: 10px;
-    }
-
-    .logos img {
-      height: 32px;
-      margin-right: 10px;
-      vertical-align: middle;
-    }
-
-    .codigo {
-      display: none;
-      background-color: #3E3364;
-      padding: 15px;
-      margin-top: 10px;
-      border-radius: 6px;
-      white-space: pre-wrap;
-      font-family: monospace;
-      color: #FFF;
-    }
-  </style>
-  <script>
-    function toggleCodigo(btn) {
-      const codigo = btn.nextElementSibling;
-      const visible = codigo.style.display === "block";
-      codigo.style.display = visible ? "none" : "block";
-      btn.textContent = visible ? "Ver más" : "Ver menos";
-    }
-  </script>
 </head>
 <body>
   <header>
-    <h1>Dante Fernández - Programador</h1>
-    <nav>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
+    <h1>Hola, soy Dante</h1>
+    <p>Estudiante técnico, programador y creador de proyectos electrónicos.</p>
   </header>
 
-  <main>
-    <section id="proyectos">
-      <h2>Mis Proyectos</h2>
+  <section id="lenguajes">
+    <h2>Lenguajes de Programación</h2>
+    <ul>
+      <li><img src="logos/arduino.png" alt="Arduino" /> Arduino C++</li>
+      <li><img src="logos/scratch.png" alt="Scratch" /> Scratch</li>
+    </ul>
+  </section>
 
-      <article class="proyecto">
-        <h3>Proyecto Arduino - Sensor de Proximidad</h3>
-        <p><strong>Tecnologías utilizadas:</strong> Arduino IDE, C++ (Arduino), Tinkercad</p>
-        <p><strong>Componentes:</strong> Buzzer, LEDs, Sensor HC-SR04</p>
+  <section id="tools">
+    <h2>Herramientas que utilizo</h2>
+    <ul>
+      <li><img src="logos/arduinoide.png" alt="Arduino IDE" /> Arduino IDE</li>
+      <li><img src="logos/tinkercad.png" alt="Tinkercad" /> Tinkercad</li>
+      <li><img src="logos/scratch.png" alt="Scratch" /> Scratch</li>
+    </ul>
+  </section>
 
-        <video controls width="480" poster="images/proyecto-arduino-thumb.jpg">
-          <source src="video.mp4" type="video/mp4" />
-          Tu navegador no soporta la etiqueta de video.
-        </video>
+  <section id="proyectos">
+    <h2>Mis Proyectos</h2>
 
-        <div class="logos">
-          <img src="logos/arduino.png" alt="Arduino" title="Arduino" />
-          <img src="logos/cpp.png" alt="C++" title="C++" />
-          <img src="logos/tinkercad.png" alt="Tinkercad" title="Tinkercad" />
-        </div>
+    <article class="proyecto">
+      <h3>Proyecto Arduino - Sensor de Proximidad</h3>
+      <p><strong>Tecnologías utilizadas:</strong> Arduino IDE, C++ (Arduino), Tinkercad</p>
+      <p><strong>Componentes:</strong> Buzzer, LEDs, Sensor HC-SR04</p>
+      <video controls width="100%" style="max-width: 800px; border-radius: 8px;" poster="images/proyecto-arduino-thumb.jpg">
+        <source src="videos/video.mp4" type="video/mp4" />
+        Tu navegador no soporta la etiqueta de video.
+      </video>
 
-        <button class="toggle-btn" onclick="toggleCodigo(this)">Ver más</button>
-        <div class="codigo">
-// C++ code
+      <div class="codigo-container">
+        <button class="ver-mas-btn" onclick="toggleCodigo(this)">Ver código fuente</button>
+        <pre class="codigo" style="display: none;"><code>// C++ code
 
 int sensor = 0;
 
@@ -151,47 +110,22 @@ void loop() {
     digitalWrite(8, LOW);
     digitalWrite(11, HIGH);
   }
-}
-        </div>
-      </article>
-    </section>
+}</code></pre>
+      </div>
+    </article>
+  </section>
 
-    <section id="sobre-mi">
-      <h2>Sobre mí</h2>
-      <p>
-        Soy Dante Fernández, tengo 16 años y programo desde los 12. Me apasiona la programación, la electrónica, el desarrollo de videojuegos y la robótica. Comencé aprendiendo Scratch y luego avancé con Arduino, siempre buscando mejorar y aprender nuevas tecnologías.
-      </p>
-      <p>Email: <a href="mailto:dantefernandez998@gmail.com">dantefernandez998@gmail.com</a></p>
-
-      <h3>Lenguajes de programación que manejo:</h3>
-      <ul>
-        <li>C#</li>
-        <li>Python</li>
-        <li>C++ (Arduino)</li>
-      </ul>
-
-      <h3>Tools:</h3>
-      <ul>
-        <li>Unity</li>
-        <li>Arduino IDE</li>
-        <li>Visual Studio</li>
-        <li>Tinkercad</li>
-        <li>Scratch</li>
-      </ul>
-    </section>
-
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>Podés encontrarme en:</p>
-      <ul>
-        <li><a href="https://github.com/dantefer4" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li>Email: <a href="mailto:dantefernandez998@gmail.com">dantefernandez998@gmail.com</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Dante Fernández. Todos los derechos reservados.</p>
-  </footer>
+  <script>
+    function toggleCodigo(btn) {
+      const pre = btn.nextElementSibling;
+      if (pre.style.display === "none") {
+        pre.style.display = "block";
+        btn.textContent = "Ocultar código";
+      } else {
+        pre.style.display = "none";
+        btn.textContent = "Ver código fuente";
+      }
+    }
+  </script>
 </body>
 </html>
