@@ -111,34 +111,75 @@
         </video>
         <button class="toggle-btn" onclick="toggleCodigo(this)">Ver más</button>
         <div class="codigo">
-          // Código de ejemplo para sensor de proximidad con buzzer
-          const int trigPin = 9;
-          const int echoPin = 10;
-          const int buzzer = 8;
+          // C++ code
 
-          void setup() {
-            pinMode(trigPin, OUTPUT);
-            pinMode(echoPin, INPUT);
-            pinMode(buzzer, OUTPUT);
-            Serial.begin(9600);
-          }
+int sensor = 0;
 
-          void loop() {
-            long duration, distance;
-            digitalWrite(trigPin, LOW);
-            delayMicroseconds(2);
-            digitalWrite(trigPin, HIGH);
-            delayMicroseconds(10);
-            digitalWrite(trigPin, LOW);
-            duration = pulseIn(echoPin, HIGH);
-            distance = duration * 0.034 / 2;
-            if (distance < 10) {
-              digitalWrite(buzzer, HIGH);
-            } else {
-              digitalWrite(buzzer, LOW);
-            }
-            delay(100);
-          }
+long readUltrasonicDistance(int triggerPin, int echoPin) {
+  pinMode(triggerPin, OUTPUT);
+  digitalWrite(triggerPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(triggerPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(triggerPin, LOW);
+
+  pinMode(echoPin, INPUT);
+  return pulseIn(echoPin, HIGH);
+}
+
+void setup() {
+  pinMode(7, OUTPUT);  
+  pinMode(8, OUTPUT);  
+  pinMode(11, OUTPUT); 
+  pinMode(5, OUTPUT);  
+  pinMode(6, OUTPUT);  
+  pinMode(9, OUTPUT);  
+  pinMode(10, OUTPUT); 
+
+  digitalWrite(11, HIGH); // Buzzer apagado al iniciar
+}
+
+void loop() {
+  sensor = 0.01723 * readUltrasonicDistance(2, 4);
+
+  if (sensor > 15) {
+    digitalWrite(7, HIGH);
+    digitalWrite(8, LOW);
+
+    digitalWrite(11, HIGH);
+
+    analogWrite(5, 0);
+    analogWrite(6, 255); 
+    analogWrite(9, 0);
+    analogWrite(10, 255); 
+  } else {
+    digitalWrite(8, HIGH);
+    digitalWrite(7, LOW);
+
+    analogWrite(5, 0);
+    analogWrite(6, 0);
+    analogWrite(9, 0);
+    analogWrite(10, 0);
+    delay(500); 
+
+    digitalWrite(11, LOW);
+
+    analogWrite(5, 255);
+    analogWrite(6, 0);   
+    analogWrite(9, 255);
+    analogWrite(10, 0);  
+    delay(750); 
+
+    analogWrite(5, 240);
+    analogWrite(6, 0);
+    analogWrite(9, 0);
+    analogWrite(10, 240);
+    delay(300);
+
+    digitalWrite(8, LOW);
+    digitalWrite(11, HIGH);
+  }
+}
         </div>
       </article>
 
