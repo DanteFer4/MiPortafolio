@@ -8,8 +8,8 @@
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
-      background: #fff;
-      color: #222;
+      background: #3E3364;
+      color: #f9f9f9;
     }
     header, footer {
       text-align: center;
@@ -18,19 +18,19 @@
     nav a {
       margin: 0 10px;
       text-decoration: none;
-      color: #000;
+      color: #fff;
       font-weight: bold;
     }
     nav a:hover {
-      color: #444;
+      color: #ddd;
     }
     h2 {
-      border-bottom: 2px solid #555;
+      border-bottom: 2px solid #aaa;
       padding-bottom: 5px;
     }
     .toggle-btn {
-      background-color: #000;
-      color: #fff;
+      background-color: #fff;
+      color: #000;
       border: none;
       border-radius: 6px;
       padding: 8px 16px;
@@ -40,11 +40,11 @@
       transition: background-color 0.3s ease;
     }
     .toggle-btn:hover {
-      background-color: #222;
+      background-color: #ccc;
     }
     .codigo {
       display: none;
-      background-color: #3E3364;
+      background-color: #2A2242;
       padding: 15px;
       margin-top: 10px;
       border-radius: 6px;
@@ -63,10 +63,6 @@
       align-items: center;
       gap: 8px;
       font-weight: 600;
-    }
-    .listado-logos img {
-      height: 24px;
-      width: 24px;
     }
   </style>
   <script>
@@ -95,6 +91,7 @@
 
       <article class="proyecto">
         <h3>Proyecto Arduino - Sensor de Proximidad</h3>
+        <p><strong>Tecnologías utilizadas:</strong> Arduino, C++, Tinkercad, Arduino IDE</p>
 
         <video controls width="640" height="360" style="max-width: 100%; border-radius: 8px;" poster="images/proyecto-arduino-thumb.jpg">
           <source src="video.mp4" type="video/mp4" />
@@ -128,7 +125,7 @@ void setup() {
   pinMode(9, OUTPUT);  
   pinMode(10, OUTPUT); 
 
-  digitalWrite(11, HIGH); // Asegurarse que el buzzer esté apagado al iniciar
+  digitalWrite(11, HIGH);
 }
 
 void loop() {
@@ -173,6 +170,14 @@ void loop() {
 }
         </div>
       </article>
+
+      <article class="proyecto">
+        <h3>Proyecto Arduino - Camión que no se choca</h3>
+        <p><strong>Tecnologías utilizadas:</strong> Arduino IDE, C++, Tinkercad</p>
+        <p><strong>Componentes utilizados:</strong> Buzzer, Sensor de proximidad, LEDs, Motores de aficionado, Arduino Uno</p>
+
+        <!-- Podés agregar un video o imagen del proyecto si querés más adelante -->
+      </article>
     </section>
 
     <section id="sobre-mi">
@@ -184,34 +189,33 @@ void loop() {
 
       <h3>Lenguajes de programación que manejo:</h3>
       <ul class="listado-logos">
-        <li><img src="logos/csherp.png" alt="C#" title="C#" /> C#</li>
-        <li><img src="logos/python.png" alt="Python" title="Python" /> Python</li>
-        <li><img src="logos/c++.png" alt="C++" title="C++" /> C++ (Arduino)</li>
+        <li>C#</li>
+        <li>Python</li>
+        <li>C++ (Arduino)</li>
       </ul>
 
       <h3>Herramientas y tecnologías que utilizo:</h3>
       <ul class="listado-logos">
-        <li><img src="logos/unity.png" alt="Unity" title="Unity" /> Unity</li>
-        <li><img src="logos/arduino.logo.png" alt="Arduino" title="Arduino" /> Arduino IDE</li>
-        <li><img src="logos/vscode.jpg" alt="Visual Studio Code" title="VSCode" /> Visual Studio Code</li>
-        <li><img src="logos/tinkercad.png" alt="Tinkercad" title="Tinkercad" /> Tinkercad</li>
-        <li><img src="logos/scratch.jpg" alt="Scratch" title="Scratch" /> Scratch</li>
+        <li>Unity</li>
+        <li>Arduino IDE</li>
+        <li>Visual Studio Code</li>
+        <li>Tinkercad</li>
+        <li>Scratch</li>
       </ul>
     </section>
 
     <section id="experiencia">
       <h2>Mi experiencia y aprendizaje</h2>
       <p>
-        Mi experiencia en programación y electrónica comenzó con proyectos escolares y tutoriales online. Me encanta aprender mediante la práctica y seguir mejorando mis habilidades cada día.
+        Aprendí C# haciendo el curso de desarrollo de videojuegos con Unity de Devalen en Udemy, donde también reforcé lógica de programación.
       </p>
       <p>
-        <strong>¿Cómo aprendí cada lenguaje?</strong><br />
-        • Aprendí <strong>C#</strong> con el curso de programación en Unity de <strong>Devalen</strong> en Udemy.<br />
-        • Aprendí <strong>Python</strong> con el curso de 8 horas de <strong>Lucas Dalto</strong> (Soy Dalto).<br />
-        • Aprendí <strong>C++</strong> en un curso sobre robótica, donde trabajamos con Arduino y sensores.<br />
+        Aprendí Python con el curso completo de 8 horas de Lucas Dalto, también conocido como Soy Dalto.
       </p>
-      <p><strong>Certificado del curso de robótica:</strong></p>
-      <img src="certificados/robotica.jpg" alt="Certificado de robótica" style="max-width: 100%; height: auto; border-radius: 8px; margin-top: 10px;" />
+      <p>
+        Aprendí C++ con un curso orientado a robótica para principiantes, en el cual realicé varios proyectos con Arduino.
+      </p>
+      <p><em>[Espacio para subir imagen del certificado del curso de robótica]</em></p>
     </section>
 
     <section id="contacto">
