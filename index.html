@@ -8,8 +8,8 @@
     body {
       font-family: Arial, sans-serif;
       margin: 20px;
-      background: #eaeaea;
-      color: #222;
+      background: #3E3364;
+      color: #f2f2f2;
     }
     header, footer {
       text-align: center;
@@ -18,14 +18,14 @@
     nav a {
       margin: 0 10px;
       text-decoration: none;
-      color: #000;
+      color: #fff;
       font-weight: bold;
     }
     nav a:hover {
-      color: #444;
+      color: #ccc;
     }
     h2 {
-      border-bottom: 2px solid #555;
+      border-bottom: 2px solid #aaa;
       padding-bottom: 5px;
     }
     .toggle-btn {
@@ -54,7 +54,7 @@
     }
     .codigo {
       display: none;
-      background-color: #3E3364;
+      background-color: #2b2442;
       padding: 15px;
       margin-top: 10px;
       border-radius: 6px;
@@ -105,91 +105,24 @@
 
       <article class="proyecto">
         <h3>Proyecto Arduino - Sensor de Proximidad</h3>
-
         <video controls width="640" height="360" style="max-width: 100%; border-radius: 8px;" poster="images/proyecto-arduino-thumb.jpg">
           <source src="video.mp4" type="video/mp4" />
           Tu navegador no soporta la etiqueta de video.
         </video>
-
         <button class="toggle-btn" onclick="toggleCodigo(this)">Ver más</button>
-        <div class="codigo">
-// C++ code
+        <div class="codigo">[...]</div>
+      </article>
 
-int sensor = 0;
-
-long readUltrasonicDistance(int triggerPin, int echoPin) {
-  pinMode(triggerPin, OUTPUT);
-  digitalWrite(triggerPin, LOW);
-  delayMicroseconds(2);
-  digitalWrite(triggerPin, HIGH);
-  delayMicroseconds(10);
-  digitalWrite(triggerPin, LOW);
-
-  pinMode(echoPin, INPUT);
-  return pulseIn(echoPin, HIGH);
-}
-
-void setup() {
-  pinMode(7, OUTPUT);  
-  pinMode(8, OUTPUT);  
-  pinMode(11, OUTPUT); 
-  pinMode(5, OUTPUT);  
-  pinMode(6, OUTPUT);  
-  pinMode(9, OUTPUT);  
-  pinMode(10, OUTPUT); 
-
-  digitalWrite(11, HIGH); // Asegurarse que el buzzer esté apagado al iniciar
-}
-
-void loop() {
-  sensor = 0.01723 * readUltrasonicDistance(2, 4);
-
-  if (sensor > 15) {
-    digitalWrite(7, HIGH);
-    digitalWrite(8, LOW);
-    digitalWrite(11, HIGH);
-
-    analogWrite(5, 0);
-    analogWrite(6, 255); 
-    analogWrite(9, 0);
-    analogWrite(10, 255); 
-  } else {
-    digitalWrite(8, HIGH);
-    digitalWrite(7, LOW);
-
-    analogWrite(5, 0);
-    analogWrite(6, 0);
-    analogWrite(9, 0);
-    analogWrite(10, 0);
-    delay(500); 
-
-    digitalWrite(11, LOW);
-
-    analogWrite(5, 255);
-    analogWrite(6, 0);   
-    analogWrite(9, 255);
-    analogWrite(10, 0);  
-    delay(750); 
-
-    analogWrite(5, 240);
-    analogWrite(6, 0);
-    analogWrite(9, 0);
-    analogWrite(10, 240);
-    delay(300);
-
-    digitalWrite(8, LOW);
-    digitalWrite(11, HIGH);
-  }
-}
-        </div>
+      <article class="proyecto">
+        <h3>Proyecto Arduino - Camión que no se choca</h3>
+        <p><strong>Tecnologías utilizadas:</strong> Tinkercad, C++ y Arduino IDE</p>
+        <p><strong>Componentes utilizados:</strong> Buzzer, sensor de proximidad, LEDs, motores de aficionado, Arduino Uno</p>
       </article>
     </section>
 
     <section id="sobre-mi">
       <h2>Sobre mí</h2>
-      <p>
-        Soy Dante Fernández, tengo 16 años y programo desde los 12. Me apasiona la programación, la electrónica, el desarrollo de videojuegos y la robótica. Comencé aprendiendo Scratch y luego avancé con Arduino, siempre buscando mejorar y aprender nuevas tecnologías.
-      </p>
+      <p>Soy Dante Fernández, tengo 16 años y programo desde los 12. Me apasiona la programación, la electrónica, el desarrollo de videojuegos y la robótica. Comencé aprendiendo Scratch y luego avancé con Arduino, siempre buscando mejorar y aprender nuevas tecnologías.</p>
       <p>Email: <a href="mailto:dantefernandez998@gmail.com">dantefernandez998@gmail.com</a></p>
 
       <h3>Lenguajes de programación que manejo:</h3>
@@ -211,11 +144,8 @@ void loop() {
 
     <section id="experiencia">
       <h2>Mi experiencia y aprendizaje</h2>
-      <p>
-        Aprendí C# a través del curso de programación en Unity de Devalen en Udemy. Python lo aprendí gracias al curso completo de 8 horas de Lucas Dalto (Soy Dalto). Por último, aprendí C++ mediante un curso sobre robótica, el cual me permitió realizar proyectos con Arduino.
-      </p>
-      <p>
-        <em>Aquí se mostrará la imagen del certificado del curso de robótica:</em><br>
+      <p>Aprendí C# a través del curso de programación en Unity de Devalen en Udemy. Python lo aprendí gracias al curso completo de 8 horas de Lucas Dalto (Soy Dalto). Por último, aprendí C++ mediante un curso sobre robótica, el cual me permitió realizar proyectos con Arduino.</p>
+      <p><em>Aquí se mostrará la imagen del certificado del curso de robótica:</em><br>
         <img src="images/certificado-robotica.jpg" alt="Certificado de curso de robótica" style="max-width: 100%; margin-top: 10px; border-radius: 8px;" />
       </p>
     </section>
