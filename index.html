@@ -3,86 +3,130 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Proyecto Arduino - Sensor de Proximidad</title>
+  <title>Portafolio de Dante Fernández</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    .proyecto {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
-    }
-    .proyecto h3 {
-      margin-top: 0;
-    }
-    video {
-      max-width: 100%;
-      border-radius: 8px;
-      aspect-ratio: 16 / 9;
-      display: block;
-      margin-bottom: 15px;
-    }
-    .codigo-container {
-      margin-top: 10px;
-    }
-    .ver-mas-btn {
-      background-color: black;
-      color: white;
+    .toggle-btn {
+      background-color: #000;
+      color: #fff;
       border: none;
-      padding: 8px 12px;
-      border-radius: 5px;
+      border-radius: 6px;
+      padding: 8px 16px;
       cursor: pointer;
-      font-size: 1rem;
+      margin-top: 10px;
+      font-size: 0.95rem;
       transition: background-color 0.3s ease;
     }
-    .ver-mas-btn:hover {
-      background-color: #333;
-    }
-    pre.codigo {
+
+    .toggle-btn:hover {
       background-color: #222;
-      color: #eee;
-      padding: 15px;
-      border-radius: 8px;
+    }
+
+    .logos {
       margin-top: 10px;
-      overflow-x: auto;
-      font-size: 0.9rem;
-      line-height: 1.4;
-      display: none;
-      white-space: pre-wrap; /* Para que no se pierdan saltos de línea */
-      word-wrap: break-word;
     }
-    .logos-container {
-      margin-top: 15px;
-    }
-    .logos-container img {
-      width: 40px;
-      height: 40px;
+
+    .logos img {
+      height: 32px;
       margin-right: 10px;
       vertical-align: middle;
     }
+
+    .codigo {
+      display: none;
+      background-color: #3E3364;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 6px;
+      white-space: pre-wrap;
+      font-family: monospace;
+      color: #FFF;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    nav a {
+      margin: 0 12px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 0 15px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      padding: 20px 0;
+      border-top: 1px solid #ddd;
+    }
+
+    video {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
   </style>
+  <script>
+    function toggleCodigo(btn) {
+      const codigo = btn.nextElementSibling;
+      const visible = codigo.style.display === "block";
+      codigo.style.display = visible ? "none" : "block";
+      btn.textContent = visible ? "Ver más" : "Ver menos";
+    }
+  </script>
 </head>
 <body>
+  <header>
+    <h1>Dante Fernández - Programador</h1>
+    <nav>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
 
-<article class="proyecto">
-  <h3>Proyecto Arduino - Sensor de Proximidad</h3>
-  <p><strong>Tecnologías utilizadas:</strong> Arduino IDE, C++ (Arduino), Tinkercad</p>
-  <p><strong>Componentes:</strong> Buzzer, LEDs, Sensor HC-SR04</p>
-  <video controls poster="images/proyecto-arduino-thumb.jpg">
-    <source src="videos/video.mp4" type="video/mp4" />
-    Tu navegador no soporta la etiqueta de video.
-  </video>
+  <main>
+    <section id="proyectos">
+      <h2>Mis Proyectos</h2>
 
-  <div class="codigo-container">
-    <button class="ver-mas-btn" onclick="toggleCodigo(this)">Ver código fuente</button>
-    <pre class="codigo"><code>// C++ code
+      <article class="proyecto">
+        <h3>Proyecto Arduino - Sensor de Proximidad</h3>
+        <p><strong>Tecnologías utilizadas:</strong> Arduino IDE, C++ (Arduino), Tinkercad</p>
+        <p><strong>Componentes:</strong> Buzzer, LEDs, Sensor HC-SR04</p>
+
+        <video controls width="480" poster="images/proyecto-arduino-thumb.jpg">
+          <source src="video.mp4" type="video/mp4" />
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+
+        <div class="logos">
+          <img src="logos/arduino.png" alt="Arduino" title="Arduino" />
+          <img src="logos/cpp.png" alt="C++" title="C++" />
+          <img src="logos/tinkercad.png" alt="Tinkercad" title="Tinkercad" />
+        </div>
+
+        <button class="toggle-btn" onclick="toggleCodigo(this)">Ver más</button>
+        <div class="codigo">
+// C++ code
 
 int sensor = 0;
 
@@ -150,28 +194,46 @@ void loop() {
     digitalWrite(11, HIGH);
   }
 }
-</code></pre>
-  </div>
+        </div>
+      </article>
+    </section>
 
-  <div class="logos-container">
-    <img src="arduino.logo.png" alt="Arduino Logo" title="Arduino" />
-    <img src="c++.png" alt="C++ Logo" title="C++" />
-    <img src="tinkercad.png" alt="Tinkercad Logo" title="Tinkercad" />
-  </div>
-</article>
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy Dante Fernández, tengo 16 años y programo desde los 12. Me apasiona la programación, la electrónica, el desarrollo de videojuegos y la robótica. Comencé aprendiendo Scratch y luego avancé con Arduino, siempre buscando mejorar y aprender nuevas tecnologías.
+      </p>
+      <p>Email: <a href="mailto:dantefernandez998@gmail.com">dantefernandez998@gmail.com</a></p>
 
-<script>
-  function toggleCodigo(button) {
-    const pre = button.nextElementSibling;
-    if (pre.style.display === 'none' || pre.style.display === '') {
-      pre.style.display = 'block';
-      button.textContent = 'Ocultar código fuente';
-    } else {
-      pre.style.display = 'none';
-      button.textContent = 'Ver código fuente';
-    }
-  }
-</script>
+      <h3>Lenguajes de programación que manejo:</h3>
+      <ul>
+        <li>C#</li>
+        <li>Python</li>
+        <li>C++ (Arduino)</li>
+      </ul>
 
+      <h3>Tools:</h3>
+      <ul>
+        <li>Unity</li>
+        <li>Arduino IDE</li>
+        <li>Visual Studio</li>
+        <li>Tinkercad</li>
+        <li>Scratch</li>
+      </ul>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Podés encontrarme en:</p>
+      <ul>
+        <li><a href="https://github.com/dantefer4" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li>Email: <a href="mailto:dantefernandez998@gmail.com">dantefernandez998@gmail.com</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Dante Fernández. Todos los derechos reservados.</p>
+  </footer>
 </body>
 </html>
