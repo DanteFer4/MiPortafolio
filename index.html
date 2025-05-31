@@ -73,4 +73,32 @@ void loop() {
     analogWrite(5, 240);
     analogWrite(6, 0);
     analogWrite(9, 0);
-    analogWrite(10, 2
+    analogWrite(10, 240);
+    delay(300);
+
+    digitalWrite(8, LOW);
+    digitalWrite(11, HIGH);
+  }
+}
+</code></pre>
+  </div>
+
+  <div class="logos-container" style="margin-top: 15px;">
+    <img src="arduino.logo.png" alt="Arduino Logo" title="Arduino" style="width: 40px; height: 40px; margin-right: 10px; vertical-align: middle;" />
+    <img src="c++.png" alt="C++ Logo" title="C++" style="width: 40px; height: 40px; margin-right: 10px; vertical-align: middle;" />
+    <img src="tinkercad.png" alt="Tinkercad Logo" title="Tinkercad" style="width: 40px; height: 40px; vertical-align: middle;" />
+  </div>
+
+  <script>
+    function toggleCodigo(button) {
+      const pre = button.nextElementSibling;
+      if (pre.style.display === 'none' || pre.style.display === '') {
+        pre.style.display = 'block';
+        button.textContent = 'Ocultar código fuente';
+      } else {
+        pre.style.display = 'none';
+        button.textContent = 'Ver código fuente';
+      }
+    }
+  </script>
+</article>
