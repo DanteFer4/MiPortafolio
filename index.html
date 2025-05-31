@@ -1,18 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Proyecto Arduino - Sensor de Proximidad</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .proyecto {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgb(0 0 0 / 0.1);
+    }
+    .proyecto h3 {
+      margin-top: 0;
+    }
+    video {
+      max-width: 100%;
+      border-radius: 8px;
+      aspect-ratio: 16 / 9;
+      display: block;
+      margin-bottom: 15px;
+    }
+    .codigo-container {
+      margin-top: 10px;
+    }
+    .ver-mas-btn {
+      background-color: black;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    .ver-mas-btn:hover {
+      background-color: #333;
+    }
+    pre.codigo {
+      background-color: #222;
+      color: #eee;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 10px;
+      overflow-x: auto;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      display: none;
+      white-space: pre-wrap; /* Para que no se pierdan saltos de línea */
+      word-wrap: break-word;
+    }
+    .logos-container {
+      margin-top: 15px;
+    }
+    .logos-container img {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
 <article class="proyecto">
   <h3>Proyecto Arduino - Sensor de Proximidad</h3>
   <p><strong>Tecnologías utilizadas:</strong> Arduino IDE, C++ (Arduino), Tinkercad</p>
   <p><strong>Componentes:</strong> Buzzer, LEDs, Sensor HC-SR04</p>
-  <video controls width="100%" style="max-width: 800px; border-radius: 8px; aspect-ratio: 16/9;" poster="images/proyecto-arduino-thumb.jpg">
+  <video controls poster="images/proyecto-arduino-thumb.jpg">
     <source src="videos/video.mp4" type="video/mp4" />
     Tu navegador no soporta la etiqueta de video.
   </video>
 
   <div class="codigo-container">
-    <button class="ver-mas-btn" onclick="toggleCodigo(this)" style="background-color: black; color: white; border: none; padding: 8px 12px; border-radius: 5px; cursor: pointer; margin-top: 10px;">
-      Ver código fuente
-    </button>
-    <pre class="codigo" style="display: none; background-color: #222; color: #eee; padding: 15px; border-radius: 8px; margin-top: 10px; overflow-x: auto;">
-<code>// C++ code
+    <button class="ver-mas-btn" onclick="toggleCodigo(this)">Ver código fuente</button>
+    <pre class="codigo"><code>// C++ code
 
 int sensor = 0;
 
@@ -83,22 +153,25 @@ void loop() {
 </code></pre>
   </div>
 
-  <div class="logos-container" style="margin-top: 15px;">
-    <img src="arduino.logo.png" alt="Arduino Logo" title="Arduino" style="width: 40px; height: 40px; margin-right: 10px; vertical-align: middle;" />
-    <img src="c++.png" alt="C++ Logo" title="C++" style="width: 40px; height: 40px; margin-right: 10px; vertical-align: middle;" />
-    <img src="tinkercad.png" alt="Tinkercad Logo" title="Tinkercad" style="width: 40px; height: 40px; vertical-align: middle;" />
+  <div class="logos-container">
+    <img src="arduino.logo.png" alt="Arduino Logo" title="Arduino" />
+    <img src="c++.png" alt="C++ Logo" title="C++" />
+    <img src="tinkercad.png" alt="Tinkercad Logo" title="Tinkercad" />
   </div>
-
-  <script>
-    function toggleCodigo(button) {
-      const pre = button.nextElementSibling;
-      if (pre.style.display === 'none' || pre.style.display === '') {
-        pre.style.display = 'block';
-        button.textContent = 'Ocultar código fuente';
-      } else {
-        pre.style.display = 'none';
-        button.textContent = 'Ver código fuente';
-      }
-    }
-  </script>
 </article>
+
+<script>
+  function toggleCodigo(button) {
+    const pre = button.nextElementSibling;
+    if (pre.style.display === 'none' || pre.style.display === '') {
+      pre.style.display = 'block';
+      button.textContent = 'Ocultar código fuente';
+    } else {
+      pre.style.display = 'none';
+      button.textContent = 'Ver código fuente';
+    }
+  }
+</script>
+
+</body>
+</html>
