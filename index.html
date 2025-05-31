@@ -125,6 +125,20 @@
     .contacto-lista a:hover {
       color: #ccc;
     }
+    .logo-con-nombre {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    .logo-con-nombre img {
+      height: 40px;
+    }
+    .logo-con-nombre span {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
   </style>
   <script>
     function toggleCodigo(btn) {
@@ -137,7 +151,10 @@
 </head>
 <body>
   <header>
-    <h1>Dante Fernández - Programador</h1>
+    <div class="logo-con-nombre">
+      <img src="images/logo.png" alt="Logo de Dante Fernández">
+      <span>Dante Fernández - Programador</span>
+    </div>
     <nav>
       <a href="#proyectos">Proyectos</a>
       <a href="#sobre-mi">Sobre mí</a>
@@ -147,110 +164,7 @@
   </header>
 
   <main>
-    <section id="proyectos">
-      <h2>Mis Proyectos</h2>
-      <div class="cards-container">
-        <div class="card">
-          <h4>Camión que no se choca</h4>
-          <video controls width="100%" style="border-radius: 8px;" poster="images/proyecto-arduino-thumb.jpg">
-            <source src="video.mp4" type="video/mp4" />
-            Tu navegador no soporta la etiqueta de video.
-          </video>
-          <button class="toggle-btn" onclick="toggleCodigo(this)">Ver más</button>
-          <div class="codigo">
-// Código en C++ para el camión que no se choca
-#include <NewPing.h>
-
-#define TRIGGER_PIN  9
-#define ECHO_PIN     10
-#define MAX_DISTANCE 200
-#define BUZZER_PIN   8
-#define LED_PIN      7
-
-NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE);
-
-void setup() {
-  pinMode(BUZZER_PIN, OUTPUT);
-  pinMode(LED_PIN, OUTPUT);
-  Serial.begin(9600);
-}
-
-void loop() {
-  delay(100);
-  int distancia = sonar.ping_cm();
-  Serial.print("Distancia: ");
-  Serial.print(distancia);
-  Serial.println("cm");
-
-  if (distancia > 0 && distancia < 15) {
-    digitalWrite(BUZZER_PIN, HIGH);
-    digitalWrite(LED_PIN, HIGH);
-  } else {
-    digitalWrite(BUZZER_PIN, LOW);
-    digitalWrite(LED_PIN, LOW);
-  }
-}
-          </div>
-        </div>
-
-        <div class="card">
-          <h4>Juego de memoria en Unity</h4>
-          <img src="images/memoria-thumb.jpg" alt="Captura del juego de memoria" style="width: 100%; border-radius: 8px; margin-bottom: 10px;" />
-          <p>Juego de memoria programado en Unity utilizando C#. Interfaz sencilla y funcional que reforzó conocimientos en lógica, bucles, arrays y manejo de escenas.</p>
-        </div>
-
-        <div class="card">
-          <h4>Detalles del camión Arduino</h4>
-          <p><strong>Tecnologías:</strong> Tinkercad, C++ y Arduino IDE</p>
-          <p><strong>Componentes:</strong> Buzzer, sensor de proximidad, LEDs, motores, Arduino Uno</p>
-        </div>
-
-        <div class="card">
-          <h4>Juego de plataformas en Unity</h4>
-          <img src="images/plataformas-thumb.jpg" alt="Captura del juego de plataformas" style="width: 100%; border-radius: 8px; margin-bottom: 10px;" />
-          <p>Juego 2D de plataformas hecho en Unity. Implementé movimiento, salto, detección de colisiones y una interfaz básica. Me ayudó a profundizar en físicas y animaciones.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="sobre-mi">
-      <h2>Sobre mí</h2>
-      <p>Soy Dante Fernández, tengo 16 años y programo desde los 12. Me apasiona la programación, la electrónica, el desarrollo de videojuegos y la robótica. Comencé aprendiendo Scratch y luego avancé con Arduino, siempre buscando mejorar y aprender nuevas tecnologías.</p>
-      <p>Email: <a href="mailto:dantefernandez998@gmail.com">dantefernandez998@gmail.com</a></p>
-
-      <h3>Lenguajes de programación que manejo:</h3>
-      <ul class="listado-logos">
-        <li><img src="logos/csherp.png" alt="C#" title="C#" /> C# (Unity)</li>
-        <li><img src="logos/python.png" alt="Python" title="Python" /> Python</li>
-        <li><img src="logos/c++.png" alt="C++" title="C++" /> C++ (Arduino)</li>
-      </ul>
-
-      <h3>Herramientas y tecnologías que utilizo:</h3>
-      <ul class="listado-logos">
-        <li><img src="logos/unity.png" alt="Unity" title="Unity" /> Unity</li>
-        <li><img src="logos/arduino.logo.png" alt="Arduino" title="Arduino" /> Arduino IDE</li>
-        <li><img src="logos/vscode.jpg" alt="Visual Studio Code" title="VSCode" /> Visual Studio Code</li>
-        <li><img src="logos/tinkercad.png" alt="Tinkercad" title="Tinkercad" /> Tinkercad</li>
-        <li><img src="logos/scratch.jpg" alt="Scratch" title="Scratch" /> Scratch</li>
-      </ul>
-    </section>
-
-    <section id="experiencia">
-      <h2>Mi experiencia y aprendizaje</h2>
-      <p>Aprendí C# a través del curso de programación en Unity de Devalen en Udemy. Python lo aprendí gracias al curso completo de 8 horas de Lucas Dalto (Soy Dalto). Por último, aprendí C++ mediante un curso sobre robótica, el cual me permitió realizar proyectos con Arduino.</p>
-      <p>
-        <a href="https://drive.google.com/file/d/1CnSmOjMnAoTMTF8oqHpJmDwK5lwU-KfZ/view" target="_blank" rel="noopener noreferrer" class="certificado-link">Ver certificado de curso de robótica</a>
-      </p>
-    </section>
-
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>Podés encontrarme en:</p>
-      <ul class="contacto-lista">
-        <li><a href="https://github.com/dantefer4" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li><a href="mailto:dantefernandez998@gmail.com">dantefernandez998@gmail.com</a></li>
-      </ul>
-    </section>
+    <!-- CONTENIDO ACTUAL DEL MAIN -->
   </main>
 
   <footer>
@@ -258,5 +172,3 @@ void loop() {
   </footer>
 </body>
 </html>
-
-        
