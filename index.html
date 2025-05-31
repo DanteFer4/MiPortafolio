@@ -6,38 +6,49 @@
   <title>Portafolio de Dante Fernández</title>
   <link rel="stylesheet" href="style.css" />
   <style>
+    .toggle-btn {
+      background-color: #000;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 16px;
+      cursor: pointer;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      transition: background-color 0.3s ease;
+    }
+
+    .toggle-btn:hover {
+      background-color: #222;
+    }
+
     .logos {
       margin-top: 10px;
     }
+
     .logos img {
-      width: 32px;
+      height: 32px;
       margin-right: 10px;
       vertical-align: middle;
     }
+
     .codigo {
       display: none;
-      background: #333;
-      color: #ccc;
-      padding: 10px;
-      border-radius: 5px;
+      background-color: #3E3364;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 6px;
       white-space: pre-wrap;
       font-family: monospace;
-      margin-top: 10px;
-    }
-    .ver-mas-btn {
-      margin-top: 10px;
-      padding: 5px 10px;
-      background-color: #B39DDB;
-      color: black;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+      color: #FFF;
     }
   </style>
   <script>
-    function toggleCodigo(id) {
-      const bloque = document.getElementById(id);
-      bloque.style.display = bloque.style.display === 'none' ? 'block' : 'none';
+    function toggleCodigo(btn) {
+      const codigo = btn.nextElementSibling;
+      const visible = codigo.style.display === "block";
+      codigo.style.display = visible ? "none" : "block";
+      btn.textContent = visible ? "Ver más" : "Ver menos";
     }
   </script>
 </head>
@@ -55,25 +66,24 @@
     <section id="proyectos">
       <h2>Mis Proyectos</h2>
 
-      <!-- Proyecto 1 -->
       <article class="proyecto">
         <h3>Proyecto Arduino - Sensor de Proximidad</h3>
-        <p><strong>Tecnologías:</strong> Arduino IDE, C++, Tinkercad</p>
+        <p><strong>Tecnologías utilizadas:</strong> Arduino IDE, C++ (Arduino), Tinkercad</p>
         <p><strong>Componentes:</strong> Buzzer, LEDs, Sensor HC-SR04</p>
 
-        <div class="logos">
-          <img src="images/logo-arduino.png" alt="Arduino" />
-          <img src="images/logo-cpp.png" alt="C++" />
-          <img src="images/logo-tinkercad.png" alt="Tinkercad" />
-        </div>
-
         <video controls width="480" poster="images/proyecto-arduino-thumb.jpg">
-          <source src="videos/proyecto-arduino.mp4" type="video/mp4" />
+          <source src="video.mp4" type="video/mp4" />
           Tu navegador no soporta la etiqueta de video.
         </video>
 
-        <p><a href="#" onclick="toggleCodigo('codigo1')" class="ver-mas-btn">Ver más / menos</a></p>
-        <div class="codigo" id="codigo1">
+        <div class="logos">
+          <img src="logos/arduino.png" alt="Arduino" title="Arduino" />
+          <img src="logos/cpp.png" alt="C++" title="C++" />
+          <img src="logos/tinkercad.png" alt="Tinkercad" title="Tinkercad" />
+        </div>
+
+        <button class="toggle-btn" onclick="toggleCodigo(this)">Ver más</button>
+        <div class="codigo">
 // C++ code
 
 int sensor = 0;
@@ -99,7 +109,7 @@ void setup() {
   pinMode(9, OUTPUT);  
   pinMode(10, OUTPUT); 
 
-  digitalWrite(11, HIGH);
+  digitalWrite(11, HIGH); // Asegurarse que el buzzer esté apagado al iniciar
 }
 
 void loop() {
@@ -109,6 +119,7 @@ void loop() {
     digitalWrite(7, HIGH);
     digitalWrite(8, LOW);
     digitalWrite(11, HIGH);
+
     analogWrite(5, 0);
     analogWrite(6, 255); 
     analogWrite(9, 0);
@@ -116,43 +127,32 @@ void loop() {
   } else {
     digitalWrite(8, HIGH);
     digitalWrite(7, LOW);
+
     analogWrite(5, 0);
     analogWrite(6, 0);
     analogWrite(9, 0);
     analogWrite(10, 0);
     delay(500); 
+
     digitalWrite(11, LOW);
+
     analogWrite(5, 255);
     analogWrite(6, 0);   
     analogWrite(9, 255);
     analogWrite(10, 0);  
     delay(750); 
+
     analogWrite(5, 240);
     analogWrite(6, 0);
     analogWrite(9, 0);
     analogWrite(10, 240);
     delay(300);
+
     digitalWrite(8, LOW);
     digitalWrite(11, HIGH);
   }
 }
         </div>
-      </article>
-
-      <!-- Proyecto 2 -->
-      <article class="proyecto">
-        <h3>Otro Proyecto - Video de ejemplo</h3>
-        <p><strong>Tecnologías:</strong> Arduino IDE, C++</p>
-
-        <div class="logos">
-          <img src="images/logo-arduino.png" alt="Arduino" />
-          <img src="images/logo-cpp.png" alt="C++" />
-        </div>
-
-        <video controls width="480" poster="images/proyecto-default.jpg">
-          <source src="videos/video.mp4" type="video/mp4" />
-          Tu navegador no soporta la etiqueta de video.
-        </video>
       </article>
     </section>
 
@@ -195,4 +195,3 @@ void loop() {
   </footer>
 </body>
 </html>
-
