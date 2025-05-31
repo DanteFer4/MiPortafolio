@@ -1,38 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portafolio de Dante Fernández</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <h1>Dante Fernández - Programador</h1>
-    <nav>
-      <a href="#proyectos">Proyectos</a>
-      <a href="#sobre-mi">Sobre mí</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
-  </header>
+<article class="proyecto">
+  <h3>Proyecto Arduino - Sensor de Proximidad</h3>
+  <p><strong>Tecnologías:</strong> Arduino IDE, C++, Tinkercad</p>
+  <p><strong>Componentes:</strong> Buzzer, LEDs, Sensor HC-SR04</p>
+  <video controls width="480" poster="images/proyecto-arduino-thumb.jpg">
+    <source src="videos/proyecto-arduino.mp4" type="video/mp4" />
+    Tu navegador no soporta la etiqueta de video.
+  </video>
+  <p>Descripción: Este proyecto utiliza un sensor de proximidad para medir distancias y activar un zumbador cuando un objeto está cerca. Además, el robot toma decisiones como retroceder y girar automáticamente.</p>
 
-  <main>
-    <section id="proyectos">
-      <h2>Mis Proyectos</h2>
-
-      <!-- Proyecto Arduino ejemplo -->
-      <article class="proyecto">
-        <h3>Proyecto Arduino - Sensor de Proximidad</h3>
-        <p><strong>Tecnologías:</strong> Arduino IDE, C++, Tinkercad</p>
-        <p><strong>Componentes:</strong> Buzzer, LEDs, Sensor HC-SR04</p>
-        <video controls width="480" poster="images/proyecto-arduino-thumb.jpg">
-          <source src="videos/proyecto-arduino.mp4" type="video/mp4" />
-          Tu navegador no soporta la etiqueta de video.
-        </video>
-        <p>Descripción: Este proyecto utiliza un sensor de proximidad para medir distancias y activar un zumbador cuando un objeto está cerca. Además, el robot toma decisiones como retroceder y girar automáticamente.</p>
-
-        <h4>Código fuente:</h4>
-        <pre><code>
+  <button class="toggle-codigo" onclick="toggleCodigo(this)">Ver código</button>
+  <div class="codigo-container" style="display: none; margin-top: 15px;">
+    <pre><code>
 // C++ code
 
 int sensor = 0;
@@ -102,46 +80,6 @@ void loop() {
     digitalWrite(11, HIGH);
   }
 }
-        </code></pre>
-      </article>
-    </section>
-
-    <section id="sobre-mi">
-      <h2>Sobre mí</h2>
-      <p>
-        Soy Dante Fernández, tengo 16 años y programo desde los 12. Me apasiona la programación, la electrónica, el desarrollo de videojuegos y la robótica. Comencé aprendiendo Scratch y luego avancé con Arduino, siempre buscando mejorar y aprender nuevas tecnologías.
-      </p>
-      <p>Email: <a href="mailto:dantefernandez998@gmail.com">dantefernandez998@gmail.com</a></p>
-
-      <h3>Lenguajes de programación que manejo:</h3>
-      <ul>
-        <li>C#</li>
-        <li>Python</li>
-        <li>C++ (Arduino)</li>
-      </ul>
-
-      <h3>Tools:</h3>
-      <ul>
-        <li>Unity</li>
-        <li>Arduino IDE</li>
-        <li>Visual Studio</li>
-        <li>Tinkercad</li>
-        <li>Scratch</li>
-      </ul>
-    </section>
-
-    <section id="contacto">
-      <h2>Contacto</h2>
-      <p>Podés encontrarme en:</p>
-      <ul>
-        <li><a href="https://github.com/dantefer4" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-        <li>Email: <a href="mailto:dantefernandez998@gmail.com">dantefernandez998@gmail.com</a></li>
-      </ul>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 Dante Fernández. Todos los derechos reservados.</p>
-  </footer>
-</body>
-</html>
+    </code></pre>
+  </div>
+</article>
