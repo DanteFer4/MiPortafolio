@@ -1,90 +1,24 @@
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #1e1b2e;
-  color: #ffffff;
-  line-height: 1.6;
-  padding: 20px;
-}
-
-header {
-  background-color: #2a2342;
-  padding: 2rem;
-  text-align: center;
-}
-
-header h1 {
-  font-size: 2.5rem;
-  margin: 0;
-}
-
-header p {
-  font-size: 1.2rem;
-  color: #cfcfcf;
-}
-
-main {
-  max-width: 800px;
-  margin: 2rem auto;
-  padding: 0 1rem;
-}
-
-h2 {
-  border-bottom: 2px solid #7c3aed;
-  padding-bottom: 0.3rem;
-}
-
-.proyecto {
-  background-color: #2f2b43;
-  border-left: 4px solid #7c3aed;
-  margin: 1rem 0;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
-}
-
-.proyecto:hover {
-  background-color: #3a3455;
-  transform: scale(1.02);
-  cursor: pointer;
-}
-
-ul.listado-logos li {
-  margin: 6px 0;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-weight: 600;
-}
-
-.contacto {
-  background-color: #2a2342;
-  text-align: center;
-  padding: 1rem;
-  margin-top: 2rem;
-}
-
-@media (max-width: 600px) {
-  ul.listado-logos li {
-    font-size: 0.95rem;
+<style>
+  .listado-logos li img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    border-radius: 4px;
   }
+</style>
 
-  header h1 {
-    font-size: 2rem;
-  }
+<h3>Lenguajes de programación que manejo:</h3>
+<ul class="listado-logos">
+  <li><img src="logos/csherp.png" alt="C#" />C#</li>
+  <li><img src="logos/python.png" alt="Python" />Python</li>
+  <li><img src="logos/c++.png" alt="C++" />C++ (Arduino)</li>
+</ul>
 
-  header p {
-    font-size: 1rem;
-  }
-
-  .proyecto {
-    padding: 0.8rem;
-  }
-}
+<h3>Herramientas y tecnologías que utilizo:</h3>
+<ul class="listado-logos">
+  <li><img src="logos/unity.png" alt="Unity" />Unity</li>
+  <li><img src="logos/arduino.logo.png" alt="Arduino IDE" />Arduino IDE</li>
+  <li><img src="logos/vscode.jpg" alt="VS Code" />Visual Studio Code</li>
+  <li><img src="logos/tinkercad.png" alt="Tinkercad" />Tinkercad</li>
+  <li><img src="logos/scratch.jpg" alt="Scratch" />Scratch</li>
+</ul>
