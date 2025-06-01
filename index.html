@@ -1,174 +1,235 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portafolio de Dante Fernández</title>
   <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
-      font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #1e1b2e;
-      color: #ffffff;
-      line-height: 1.6;
-      padding: 20px;
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: #3E3364;
+      color: #f9f9f9;
     }
-
-    header {
-      background-color: #2a2342;
-      padding: 2rem;
+    header, footer {
       text-align: center;
+      margin-bottom: 20px;
     }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
     }
-
-    header p {
-      font-size: 1.2rem;
-      color: #cfcfcf;
+    nav a:hover {
+      color: #ddd;
     }
-
-    main {
-      max-width: 800px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
     h2 {
-      border-bottom: 2px solid #7c3aed;
-      padding-bottom: 0.3rem;
+      border-bottom: 2px solid #aaa;
+      padding-bottom: 5px;
     }
-
-    .proyecto {
-      background-color: #2f2b43;
-      border-left: 4px solid #7c3aed;
-      margin: 1rem 0;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: all 0.3s ease;
-    }
-
-    .proyecto:hover {
-      background-color: #3a3455;
-      transform: scale(1.02);
+    .toggle-btn {
+      background-color: #fff;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      padding: 8px 16px;
       cursor: pointer;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      transition: background-color 0.3s ease;
     }
-
-    ul.listado-logos li {
+    .toggle-btn:hover {
+      background-color: #ccc;
+    }
+    .codigo {
+      display: none;
+      background-color: #2A2242;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 6px;
+      white-space: pre-wrap;
+      font-family: monospace;
+      color: #FFF;
+    }
+    .listado-logos {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 10px;
+    }
+    .listado-logos li {
       margin: 6px 0;
       display: flex;
       align-items: center;
       gap: 8px;
       font-weight: 600;
     }
-
-    .contacto {
-      background-color: #2a2342;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-
-    @media (max-width: 600px) {
-      ul.listado-logos li {
-        font-size: 0.95rem;
-      }
-
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-
-      .proyecto {
-        padding: 0.8rem;
-      }
-    }
   </style>
+  <script>
+    function toggleCodigo(btn) {
+      const codigo = btn.nextElementSibling;
+      const visible = codigo.style.display === "block";
+      codigo.style.display = visible ? "none" : "block";
+      btn.textContent = visible ? "Ver más" : "Ver menos";
+    }
+  </script>
 </head>
-
 <body>
   <header>
-    <h1>Dante</h1>
-    <p>Estudiante técnico apasionado por la programación, la electrónica y la robótica.</p>
+    <h1>Dante Fernández - Programador</h1>
+    <nav>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#sobre-mi">Sobre mí</a>
+      <a href="#experiencia">Mi experiencia</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
   </header>
 
   <main>
-    <h2>Proyectos</h2>
-    <div class="proyecto">
-      <h3>Juego en Unity - Plataforma 2D</h3>
-      <p>Juego en Unity con C# con detección de colisiones, movimiento, diálogo y recogida de objetos. Inspirado en juegos clásicos de plataformas.</p>
-    </div>
-    <div class="proyecto">
-      <h3>Arduino - Camión que no se choca</h3>
-      <p>Proyecto desarrollado con Arduino Uno, utilizando sensores de proximidad para detectar obstáculos. Al detectar un objeto, se enciende un LED, suena un buzzer y el motor se detiene.</p>
-      <p><strong>Tecnologías utilizadas:</strong> Tinkercad, C++, Arduino IDE</p>
-      <p><strong>Componentes:</strong> Buzzer, sensor de proximidad, LEDs, motores de aficionado, Arduino Uno</p>
-    </div>
-    <div class="proyecto">
-      <h3>Stop Motion con cubos de Rubik</h3>
-      <p>Video creativo realizado para un concurso de GANCube, usando técnicas de stop motion con mis cubos de Rubik.</p>
-      <p><strong>Herramientas:</strong> Cámara de celular, edición básica de video</p>
-      <p><a href="#">Ver video</a></p>
-    </div>
+    <section id="proyectos">
+      <h2>Mis Proyectos</h2>
 
-    <h2>Lenguajes de programación que manejo:</h2>
-    <ul class="listado-logos">
-      <li>
-        C#
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#" width="24" height="24">
-      </li>
-      <li>
-        Python
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="24" height="24">
-      </li>
-      <li>
-        C++ (Arduino)
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" width="24" height="24">
-      </li>
-    </ul>
+      <article class="proyecto">
+        <h3>Proyecto Arduino - Sensor de Proximidad</h3>
+        <p><strong>Tecnologías utilizadas:</strong> Arduino, C++, Tinkercad, Arduino IDE</p>
 
-    <h2>Herramientas y tecnologías que utilizo:</h2>
-    <ul class="listado-logos">
-      <li>
-        Unity
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" alt="Unity" width="24" height="24">
-      </li>
-      <li>
-        Arduino IDE
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/arduino/arduino-original.svg" alt="Arduino" width="24" height="24">
-      </li>
-      <li>
-        Visual Studio Code
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VSCode" width="24" height="24">
-      </li>
-      <li>
-        Tinkercad
-        <img src="tinkercad.png" alt="Tinkercad" width="24" height="24" style="border-radius: 4px;">
-      </li>
-      <li>
-        Scratch
-        <img src="scratch.jpg" alt="Scratch" width="24" height="24">
-      </li>
-    </ul>
+        <video controls width="640" height="360" style="max-width: 100%; border-radius: 8px;" poster="images/proyecto-arduino-thumb.jpg">
+          <source src="video.mp4" type="video/mp4" />
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+
+        <button class="toggle-btn" onclick="toggleCodigo(this)">Ver más</button>
+        <div class="codigo">
+// C++ code
+
+int sensor = 0;
+
+long readUltrasonicDistance(int triggerPin, int echoPin) {
+  pinMode(triggerPin, OUTPUT);
+  digitalWrite(triggerPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(triggerPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(triggerPin, LOW);
+
+  pinMode(echoPin, INPUT);
+  return pulseIn(echoPin, HIGH);
+}
+
+void setup() {
+  pinMode(7, OUTPUT);  
+  pinMode(8, OUTPUT);  
+  pinMode(11, OUTPUT); 
+  pinMode(5, OUTPUT);  
+  pinMode(6, OUTPUT);  
+  pinMode(9, OUTPUT);  
+  pinMode(10, OUTPUT); 
+
+  digitalWrite(11, HIGH);
+}
+
+void loop() {
+  sensor = 0.01723 * readUltrasonicDistance(2, 4);
+
+  if (sensor > 15) {
+    digitalWrite(7, HIGH);
+    digitalWrite(8, LOW);
+    digitalWrite(11, HIGH);
+
+    analogWrite(5, 0);
+    analogWrite(6, 255); 
+    analogWrite(9, 0);
+    analogWrite(10, 255); 
+  } else {
+    digitalWrite(8, HIGH);
+    digitalWrite(7, LOW);
+
+    analogWrite(5, 0);
+    analogWrite(6, 0);
+    analogWrite(9, 0);
+    analogWrite(10, 0);
+    delay(500); 
+
+    digitalWrite(11, LOW);
+
+    analogWrite(5, 255);
+    analogWrite(6, 0);   
+    analogWrite(9, 255);
+    analogWrite(10, 0);  
+    delay(750); 
+
+    analogWrite(5, 240);
+    analogWrite(6, 0);
+    analogWrite(9, 0);
+    analogWrite(10, 240);
+    delay(300);
+
+    digitalWrite(8, LOW);
+    digitalWrite(11, HIGH);
+  }
+}
+        </div>
+      </article>
+
+      <article class="proyecto">
+        <h3>Proyecto Arduino - Camión que no se choca</h3>
+        <p><strong>Tecnologías utilizadas:</strong> Arduino IDE, C++, Tinkercad</p>
+        <p><strong>Componentes utilizados:</strong> Buzzer, Sensor de proximidad, LEDs, Motores de aficionado, Arduino Uno</p>
+
+        <!-- Podés agregar un video o imagen del proyecto si querés más adelante -->
+      </article>
+    </section>
+
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p>
+        Soy Dante Fernández, tengo 16 años y programo desde los 12. Me apasiona la programación, la electrónica, el desarrollo de videojuegos y la robótica. Comencé aprendiendo Scratch y luego avancé con Arduino, siempre buscando mejorar y aprender nuevas tecnologías.
+      </p>
+      <p>Email: <a href="mailto:dantefernandez998@gmail.com">dantefernandez998@gmail.com</a></p>
+
+      <h3>Lenguajes de programación que manejo:</h3>
+      <ul class="listado-logos">
+        <li>C#</li>
+        <li>Python</li>
+        <li>C++ (Arduino)</li>
+      </ul>
+
+      <h3>Herramientas y tecnologías que utilizo:</h3>
+      <ul class="listado-logos">
+        <li>Unity</li>
+        <li>Arduino IDE</li>
+        <li>Visual Studio Code</li>
+        <li>Tinkercad</li>
+        <li>Scratch</li>
+      </ul>
+    </section>
+
+    <section id="experiencia">
+      <h2>Mi experiencia y aprendizaje</h2>
+      <p>
+        Aprendí C# haciendo el curso de desarrollo de videojuegos con Unity de Devalen en Udemy, donde también reforcé lógica de programación.
+      </p>
+      <p>
+        Aprendí Python con el curso completo de 8 horas de Lucas Dalto, también conocido como Soy Dalto.
+      </p>
+      <p>
+        Aprendí C++ con un curso orientado a robótica para principiantes, en el cual realicé varios proyectos con Arduino.
+      </p>
+      <p><em>[Espacio para subir imagen del certificado del curso de robótica]</em></p>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Podés encontrarme en:</p>
+      <ul>
+        <li><a href="https://github.com/dantefer4" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li>Email: <a href="mailto:dantefernandez998@gmail.com">dantefernandez998@gmail.com</a></li>
+      </ul>
+    </section>
   </main>
 
-  <footer class="contacto">
-    <p>Contacto: dante.tuemail@gmail.com</p>
+  <footer>
+    <p>© 2025 Dante Fernández. Todos los derechos reservados.</p>
   </footer>
 </body>
-
 </html>
